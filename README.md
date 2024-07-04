@@ -38,3 +38,50 @@ To get a local copy up and running follow these simple steps.
    ```
    
 4. The API should now be available at `http://localhost:8000/api_planets/`
+
+## Usage
+
+The API provides the following endpoints:
+
+- **GET /api_planets/**: List all planets
+
+- **GET /api_planets/{id}/**: Retrieve a single planet by ID
+
+- **POST /api_planets/**: Create a new planet
+- **Request Body**:
+  ```json
+  {
+  "name": "tlatoa",
+  "population": 256657,
+  "terrains": [
+    "desert",
+	   "humedity"
+	   ],
+  "climates": ["arid", "ddff"]
+   }
+  ```
+  
+- **PUT /api_planets/{id}/**: Update a planet by ID
+- **Request Body**:
+  ```json
+  {
+  "name": "tlatoa",
+  "population": 367889,
+  "terrains": [
+    "desert",
+       "humedity"
+       ],
+  "climates": ["arid", "ddff"]
+   }
+  ```
+  
+  - **PATCH /api_planets/{id}/**: Partially update a planet by ID (fields are optional) If you only want to update the population, you can send a request like this:
+  - **Request Body**:
+  ```json
+  {
+    "population": 367889
+    }
+    ```
+  
+- **DELETE /api_planets/{id}/**: Delete a planet by ID
+
